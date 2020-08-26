@@ -3,22 +3,11 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Commands to download dependencies and start the application:
 
-* Ruby version
+1. `bundle install`
+2. `sudo -- sh -c -e "echo '127.0.0.1 api.task-manager.test' >> /etc/hosts";`
 
-* System dependencies
+Commands used to generate the application:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. `rails g rspec:install`
