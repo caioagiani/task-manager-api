@@ -5,20 +5,20 @@ RSpec.describe User, type: :model do
 
   it { is_expected.to validate_presence_of(:email) }
   it { is_expected.to validate_uniqueness_of(:email).case_insensitive }
-  it { is_expected.to allow_value("caio.agiani@gmail.com").for(:email) } 
+  it { is_expected.to allow_value('caio.agiani@gmail.com').for(:email) }
   it { is_expected.to validate_confirmation_of(:password) }
 
 
   # context 'when name is blank' do
-  #   before { user.name = " " }
-    
-  #   it { expect(user).not_to be_valid } 
+  #   before { user.name = ' ' }
+
+  #   it { expect(user).not_to be_valid }
   # end
 
   # context 'when name is nil' do
   #   before { user.name = nil }
-    
-  #   it { expect(user).not_to be_valid } 
+
+  #   it { expect(user).not_to be_valid }
   # end
 
   # subject { build(:user) }
