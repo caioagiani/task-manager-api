@@ -4,7 +4,7 @@ RSpec.describe 'Users API', type: :request do
   let!(:user) { create(:user) }
   let(:user_id) { user.id }
 
-  before { host! "api.taskmanager.test" }
+  before { host! "api.task-manager.test" }
 
   describe "GET /api/users/:id" do
     before do
