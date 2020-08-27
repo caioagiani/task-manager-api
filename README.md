@@ -15,3 +15,4 @@ Commands used to generate the application:
 1. `rails g rspec:install`
 2. `rails g devise:install`
 3. `rails g devise user`
+4. `rspec`
