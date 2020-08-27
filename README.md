@@ -15,4 +15,5 @@ Commands used to generate the application:
 1. `rails g rspec:install`
 2. `rails g devise:install`
 3. `rails g devise user`
-4. #v1: `rspec` #v2: `spring rspec`
+4. #v1: `rspec` #v2: `spring rspec` #v3: `spring rspec <dir>/<file>.rb`
+5. `rails g controller api/v1/users`
