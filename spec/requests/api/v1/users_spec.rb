@@ -4,7 +4,10 @@ RSpec.describe 'Users API', type: :request do
   let!(:user) { create(:user) }
   let(:user_id) { user.id }
   let(:headers) do
-    { 'Accept' => 'application/vnd.taskmanager.v1' }
+    {
+      'Accept' => 'application/vnd.taskmanager.v1',
+      'Content-Type' => Mime[:json].to_s
+    }
   end
 
   before { host! 'api.task-manager.test' }
@@ -16,9 +19,7 @@ RSpec.describe 'Users API', type: :request do
 
     context 'when the user exists' do
       it 'returns the users' do
-        user_response = JSON.parse(response.body, symbolize_names: true)
-
-        expect(user_response[:id]).to eq(user_id)
+        expect(json_body[:id]).to eq(user_id)
       end
 
       it 'return status code 200' do
@@ -37,7 +38,7 @@ RSpec.describe 'Users API', type: :request do
 
   describe 'POST /api/users' do
     before do
-      post '/api/users', params: { user: user_params }, headers: headers
+      post '/api/users', params: { user: user_params }.to_json, headers: headers
     end
 
     context 'when the request params are valid' do
@@ -48,8 +49,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns json data for created user' do
-        user_response = JSON.parse(response.body, symbolize_names: true)
-        expect(user_response[:email]).to eq(user_params[:email])
+        expect(json_body[:email]).to eq(user_params[:email])
       end
 
     end
@@ -62,8 +62,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns json data for erros' do
-        user_response = JSON.parse(response.body, symbolize_names: true)
-        expect(user_response).to have_key(:errors)
+        expect(json_body).to have_key(:errors)
       end
 
     end
@@ -71,7 +70,7 @@ RSpec.describe 'Users API', type: :request do
 
   describe 'PUT /api/users/:id' do
     before do
-      put "/api/users/#{user_id}", params: {user: user_params}, headers: headers
+      put "/api/users/#{user_id}", params: { user: user_params }.to_json, headers: headers
     end
 
     context 'when the request params are valid' do
@@ -82,8 +81,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns json data for updated user' do
-        user_response = JSON.parse(response.body, symbolize_names: true)
-        expect(user_response[:email]).to eq(user_params[:email])
+        expect(json_body[:email]).to eq(user_params[:email])
       end
     end
 
@@ -95,8 +93,7 @@ RSpec.describe 'Users API', type: :request do
       end
 
       it 'returns json data for errors' do
-        user_response = JSON.parse(response.body, symbolize_names: true)
-        expect(user_response).to have_key(:errors)
+        expect(json_body).to have_key(:errors)
       end
     end
 
