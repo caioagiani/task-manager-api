@@ -55,7 +55,7 @@ RSpec.describe 'Users API', type: :request do
     end
 
     context 'when the request params are invalid' do
-      let(:user_params) { attributes_for(:user, email: 'invalid_mail') }
+      let(:user_params) { attributes_for(:user, email: 'invalid_mail@') }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -67,6 +67,39 @@ RSpec.describe 'Users API', type: :request do
       end
 
     end
+  end
+
+  describe 'PUT /api/users/:id' do
+    before do
+      put "/api/users/#{user_id}", params: {user: user_params}, headers: headers
+    end
+
+    context 'when the request params are valid' do
+      let(:user_params) {{ email: 'new_email@taskmanager.com' }}
+
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
+
+      it 'returns json data for updated user' do
+        user_response = JSON.parse(response.body, symbolize_names: true)
+        expect(user_response[:email]).to eq(user_params[:email])
+      end
+    end
+
+    context 'when the requests params are invalid' do
+      let(:user_params) {{ email: 'invalid_mail@' }}
+
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
+      end
+
+      it 'returns json data for errors' do
+        user_response = JSON.parse(response.body, symbolize_names: true)
+        expect(user_response).to have_key(:errors)
+      end
+    end
+
   end
 
 end
