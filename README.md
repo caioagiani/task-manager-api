@@ -20,6 +20,8 @@ Commands used to create the application:
    - `User.create(email: "caio.agiani14@gmail.com", password: "123123", password_confirmation: "123123")`
    - `User.all`
    - `User.count`
+7. `rails g migration add_auth_token_to_users auth_token:string`
+8. `rails db:test:prepare`
 
 ## Test
 
