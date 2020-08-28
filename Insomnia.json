@@ -1,0 +1,205 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-08-28T00:29:48.626Z",
+  "__export_source": "insomnia.desktop.app:v2020.3.3",
+  "resources": [
+    {
+      "_id": "req_f56c4e39127b45cb9482c1b33734dbcc",
+      "authentication": {},
+      "body": {},
+      "created": 1598318826641,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_b5392e568bb84eaabc7f1409e638ab15",
+          "name": "Accept",
+          "value": "application/vnd.taskmanager.v1"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1598446422793,
+      "method": "GET",
+      "modified": 1598574524524,
+      "name": "List",
+      "parameters": [],
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "http://api.task-manager.test:3000/api/users/3",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "created": 1598029646682,
+      "description": "",
+      "modified": 1598029646682,
+      "name": "Ruby-on-rails_API",
+      "parentId": null,
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_ed4d154f3460479fbc8ae5dfc87664e8",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"user\": {\n\t\t\"email\": \"caio.agiani@lervante.com.br\"\n\t}\t\n}"
+      },
+      "created": 1598574018845,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_dc0f107bbd854d42bff7e766db374504",
+          "name": "Accept",
+          "value": "application/vnd.taskmanager.v1"
+        },
+        {
+          "id": "pair_a57b28b7443b4fabab09315ab856c373",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1598446422780.5,
+      "method": "PUT",
+      "modified": 1598574528444,
+      "name": "Edit",
+      "parameters": [],
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "http://api.task-manager.test:3000/api/users/1",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c379cdc7113d44419083b2f3038c335f",
+      "authentication": {},
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"user\": {\n\t\t\"email\": \"agian123123i@gmail.com\", \n\t\t\"password\": \"caio0123\", \n\t\t\"password_confirmation\": \"caio0123\"\n\t}\n}"
+      },
+      "created": 1598029657304,
+      "description": "",
+      "headers": [
+        {
+          "id": "pair_ba796a88d88a4ce8ad0867c7d59c77ab",
+          "name": "Accept",
+          "value": "application/vnd.taskmanager.v1"
+        },
+        {
+          "description": "",
+          "id": "pair_3f97d37593ef4124aae5e7143fc42192",
+          "name": "",
+          "value": ""
+        },
+        {
+          "id": "pair_bdcdb0fd55b44c5ab040490d24b91111",
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1598446422768,
+      "method": "POST",
+      "modified": 1598574526810,
+      "name": "Create",
+      "parameters": [],
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "http://api.task-manager.test:3000/api/users",
+      "_type": "request"
+    },
+    {
+      "_id": "req_95379357f461435ca96696befd3150ea",
+      "authentication": {},
+      "body": {},
+      "created": 1598574155231,
+      "description": "",
+      "headers": [
+        {
+          "description": "",
+          "id": "pair_dc0f107bbd854d42bff7e766db374504",
+          "name": "Accept",
+          "value": "application/vnd.taskmanager.v1"
+        }
+      ],
+      "isPrivate": false,
+      "metaSortKey": -1598446422743,
+      "method": "DELETE",
+      "modified": 1598574183733,
+      "name": "Delete",
+      "parameters": [],
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingFollowRedirects": "global",
+      "settingRebuildPath": true,
+      "settingSendCookies": true,
+      "settingStoreCookies": true,
+      "url": "http://api.task-manager.test:3000/api/users/3",
+      "_type": "request"
+    },
+    {
+      "_id": "env_d7854ce77aca8129e6bd833876beec7d6ca0e293",
+      "color": null,
+      "created": 1598029646779,
+      "data": {},
+      "dataPropertyOrder": null,
+      "isPrivate": false,
+      "metaSortKey": 1598029646779,
+      "modified": 1598029646779,
+      "name": "Base Environment",
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_d7854ce77aca8129e6bd833876beec7d6ca0e293",
+      "cookies": [
+        {
+          "creation": "2020-08-25T14:38:29.380Z",
+          "domain": "levanteideias.com.br",
+          "expires": "2020-09-24T14:38:28.000Z",
+          "extensions": ["SameSite=Lax"],
+          "hostOnly": false,
+          "httpOnly": true,
+          "id": "27656549111119033",
+          "key": "__cfduid",
+          "lastAccessed": "2020-08-25T14:38:29.380Z",
+          "path": "/",
+          "value": "dd4c612c5cf630ab6907a812b863c85071598366308"
+        }
+      ],
+      "created": 1598029646782,
+      "modified": 1598366309384,
+      "name": "Default Jar",
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_f870d79280f94f75bd3abb62e5e5c4c2",
+      "contentType": "yaml",
+      "contents": "",
+      "created": 1598029646706,
+      "fileName": "Ruby-on-rails_API",
+      "modified": 1598029646706,
+      "parentId": "wrk_b08bfc4cbd94412d965f19dd9864342c",
+      "_type": "api_spec"
+    }
+  ]
+}
