@@ -1,7 +1,4 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ruby on Rails API only
 
 Commands to download dependencies and start the application:
 
@@ -23,3 +20,18 @@ Commands used to create the application:
    - `User.create(email: "caio.agiani14@gmail.com", password: "123123", password_confirmation: "123123")`
    - `User.all`
    - `User.count`
+
+## Test
+
+```javascript
+caio-agiani in task-manager-api on  master [!] ❯ spring rspec
+Running via Spring preloader in process 83972
+
+Randomized with seed 51442
+.................
+
+Finished in 0.47991 seconds (files took 0.16648 seconds to load)
+17 examples, 0 failures
+
+Randomized with seed 51442
+```
