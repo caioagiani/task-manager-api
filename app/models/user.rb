@@ -6,8 +6,16 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :auth_token
 
+  before_create :generate_authentication_token!
+
   def info
     "#{email} - #{created_at} - #{Devise.friendly_token}"
+  end
+
+  def generate_authentication_token!
+    begin
+      self.auth_token = Devise.friendly_token
+    end while User.exists?(auth_token: auth_token)
   end
 
   # attr_accessor :name

@@ -9,7 +9,6 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_confirmation_of(:password) }
   it { is_expected.to validate_uniqueness_of(:auth_token) }
 
-
   describe '#info' do
     it 'returns email, created_at and token' do
       user.save!
@@ -19,6 +18,25 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe '# !' do
+    it 'generates a unique auth token' do
+      allow(Devise).to receive(:friendly_token).and_return('qwertyuiopasdfghjkl')
+
+      user.generate_authentication_token!
+
+      expect(user.auth_token).to eq(Devise.friendly_token)
+    end
+
+    it 'generates another auth token when the current auth token already has been token' do
+
+      allow(Devise).to receive(:friendly_token).and_return('zxcvbnmasdfghjl', 'zxcvbnmasdfghjl', 'okmijbuhyvtgfc')
+      existing_user = create(:user)
+
+      user.generate_authentication_token!
+
+      expect(user.auth_token).not_to eq(existing_user.auth_token)
+    end
+  end
 
   # context 'when name is blank' do
   #   before { user.name = ' ' }
