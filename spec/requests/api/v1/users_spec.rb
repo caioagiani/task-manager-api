@@ -22,7 +22,7 @@ RSpec.describe 'Users API', type: :request do
         expect(json_body[:id]).to eq(user_id)
       end
 
-      it 'return status code 200' do
+      it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
     end
@@ -108,7 +108,7 @@ RSpec.describe 'Users API', type: :request do
       expect(response).to have_http_status(204)
     end
 
-    it 'removes user from database' do
+    it 'remove user from database' do
       expect(User.find_by(id: user.id)).to be_nil
     end
 

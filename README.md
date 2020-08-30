@@ -22,6 +22,7 @@ Commands used to create the application:
    - `User.count`
 7. `rails g migration add_auth_token_to_users auth_token:string`
 8. `rails db:test:prepare`
+9. `rails g controller api/v1/sessions --no-test-framework`
 
 ## Test
 
