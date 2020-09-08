@@ -23,6 +23,7 @@ Commands used to create the application:
 7. `rails g migration add_auth_token_to_users auth_token:string`
 8. `rails db:test:prepare`
 9. `rails g controller api/v1/sessions --no-test-framework`
+10. `rails g model task title:string description:text done:boolean deadline:datetime user:references`
 
 ## Test
 
