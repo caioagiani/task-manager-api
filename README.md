@@ -24,6 +24,7 @@ Commands used to create the application:
 8. `rails db:test:prepare`
 9. `rails g controller api/v1/sessions --no-test-framework`
 10. `rails g model task title:string description:text done:boolean deadline:datetime user:references`
+11. `rails g controller api/v1/tasks --no-test-framework`
 
 ## Test
 
