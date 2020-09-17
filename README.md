@@ -30,13 +30,13 @@ Commands used to create the application:
 
 ```javascript
 caio-agiani in task-manager-api on  master [!] ❯ spring rspec
-Running via Spring preloader in process 67541
+Running via Spring preloader in process 59317
 
-Randomized with seed 52155
-............................................................
+Randomized with seed 1991
+..............................................................
 
-Finished in 2.05 seconds (files took 0.24566 seconds to load)
-60 examples, 0 failures
+Finished in 1.41 seconds (files took 0.16575 seconds to load)
+62 examples, 0 failures
 
-Randomized with seed 52155
+Randomized with seed 1991
 ```
