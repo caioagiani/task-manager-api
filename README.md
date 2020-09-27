@@ -2,6 +2,8 @@
 
 Commands to download dependencies and start the application:
 
+### v1
+
 1. `sudo -- sh -c -e "echo '127.0.0.1 api.task-manager.test' >> /etc/hosts";`
 2. `bundle install`
 3. `rails db:create db:migrate`
@@ -25,6 +27,12 @@ Commands used to create the application:
 9. `rails g controller api/v1/sessions --no-test-framework`
 10. `rails g model task title:string description:text done:boolean deadline:datetime user:references`
 11. `rails g controller api/v1/tasks --no-test-framework`
+
+### v2
+
+1. `rails g serializer api/v2/task`
+
+- `spring stop`
 
 ## Test
 
