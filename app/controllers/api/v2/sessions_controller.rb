@@ -1,4 +1,5 @@
 class Api::V2::SessionsController < ApplicationController
+
   def create
     user = User.find_by(email: session_params[:email])
 
@@ -23,6 +24,7 @@ class Api::V2::SessionsController < ApplicationController
     head 204
   end
 
+  private
 
   def session_params
     params.require(:session).permit(:email, :password)
